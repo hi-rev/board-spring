@@ -11,4 +11,8 @@ public class BoardController {
         return "list";
     }
 
+    @GetMapping("/post")
+    public String post() {
+        return "post";
+    }
 }
