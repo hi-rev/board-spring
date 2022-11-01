@@ -31,9 +31,6 @@ public class Board {
     @Column(updatable = false)
     private LocalDateTime createdDate;
 
-    @LastModifiedBy
-    private LocalDateTime modifiedDate;
-
     @Builder
     public Board(Long id, String author, String title, String content) {
         this.id = id;
