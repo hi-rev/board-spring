@@ -1,10 +1,7 @@
 package com.example.boardspring.dto;
 
 import com.example.boardspring.domain.Board;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -29,6 +26,7 @@ public class BoardDto {
         return build;
     }
 
+    @Builder
     public BoardDto(Long id, String author, String title, String content, LocalDateTime createdDate) {
         this.id = id;
         this.author = author;
