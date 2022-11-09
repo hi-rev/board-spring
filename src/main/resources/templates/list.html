@@ -28,22 +28,32 @@
         th: 헤더 칸을 나타내는 태그
         td: 일반적인 칸을 나타내는 태그-->
     <table class="tableTab">
-    <tr class="text-center" th:each="post : ${postList}">
-        <th scope="row">
-            <span th:text="${post.id}"></span>
-        </th>
-        <td>
-            <a th:href="@{'/post/' + ${post.id}}">
-                <span th:text="${post.title}"></span>
-            </a>
-        </td>
-        <td>
-            <span th:text="${post.author}"></span>
-        </td>
-        <td>
-            <span th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
-        </td>
-    </tr>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일자</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr class="text-center" th:each="post : ${postList}">
+            <td>
+                <span th:text="${post.id}"></span>
+            </td>
+            <td>
+                <a th:href="@{'/post/' + ${post.id}}">
+                    <span th:text="${post.title}"></span>
+                </a>
+            </td>
+            <td>
+                <span th:text="${post.author}"></span>
+            </td>
+            <td>
+                <span th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
+            </td>
+        </tr>
+        </tbody>
     </table>
 
     <script th:src="@{/js/pageMove.js}"></script>
