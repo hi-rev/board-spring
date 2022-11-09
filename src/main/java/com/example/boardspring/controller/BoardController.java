@@ -3,8 +3,11 @@ package com.example.boardspring.controller;
 import com.example.boardspring.dto.BoardDto;
 import com.example.boardspring.service.BoardService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class BoardController {
@@ -15,7 +18,11 @@ public class BoardController {
     }
 
     @GetMapping("/")
-    public String list() {
+    public String list(Model model) {
+        // DB에 저장되어 있는 글 목록 가져오기
+        List<BoardDto> boardDtoList = boardService.getBoardList();
+        // boardDtoList를 list.html에 postList로 전달해준다.
+        model.addAttribute("postList", boardDtoList);
         return "list";
     }
 

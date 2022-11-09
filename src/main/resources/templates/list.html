@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!--이를 작성해주어야 타임리프 문법이 에러를 일으키지 않고 동작할 수 있음-->
 <!--thymeleaf 템플릿 엔진 선언-->
+<!--타임리프란 JSP와 같이 서버에서 클라이언트에게 응답할 브라우저 화면을 만들어주는 역할을 함-->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
@@ -15,6 +16,36 @@
         <!--write 버튼을 클릭하면 글을 입력하는 페이지로 이동-->
         <input id="write" type="button" onclick="writing()" value="글쓰기" />
     </div>
+    <div id="list-bar">
+        <!--글 목록 메뉴바-->
+        <!--번호/제목/작성자/작성시각-->
+
+    </div>
+
+    <!--table, tr, th, td 태그란?-->
+    <!--표를 나타내는 태그이다.-->
+    <!--tr: 표 내부에서 행을 나타내는 태그
+        th: 헤더 칸을 나타내는 태그
+        td: 일반적인 칸을 나타내는 태그-->
+    <table class="tableTab">
+    <tr class="text-center" th:each="post : ${postList}">
+        <th scope="row">
+            <span th:text="${post.id}"></span>
+        </th>
+        <td>
+            <a th:href="@{'/post/' + ${post.id}}">
+                <span th:text="${post.title}"></span>
+            </a>
+        </td>
+        <td>
+            <span th:text="${post.author}"></span>
+        </td>
+        <td>
+            <span th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
+        </td>
+    </tr>
+    </table>
+
     <script th:src="@{/js/pageMove.js}"></script>
 </body>
 </html>

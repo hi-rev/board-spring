@@ -26,3 +26,12 @@ body {
     margin-right: 10%;
     margin-left: 10%;
 }
+
+.tableTab {
+    background-color: aliceblue;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.text-center {
+}
