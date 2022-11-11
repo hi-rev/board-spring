@@ -27,11 +27,22 @@ body {
     margin-left: 10%;
 }
 
-.tableTab {
+table {
     background-color: aliceblue;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 30px;
+    /*auto로 하면 테이블을 중앙에 놓을 수 있다.*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    text-align: center;
+    table-layout: fixed;
 }
 
-.text-center {
+table, th, td {
+    border: 1px solid lightsteelblue;
 }
+
+td {
+    height: 50px;
+}
+
