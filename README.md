@@ -6,7 +6,7 @@
 
 ### 진행 상황
 - [X] 글 작성 (CREATE)
-- [ ] 글 목록 출력 (READ)
+- [X] 글 목록 출력 (READ)
 - [ ] 글 조회 (READ)
 - [ ] 글 수정 (UPDATE)
 - [ ] 글 삭제 (DELETE)
