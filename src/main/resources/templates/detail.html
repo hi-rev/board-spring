@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--타임리프 선언-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+    <title th:text="${post.title}"></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+    <div class="top">
+        <h1>My Blog</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h3 class="card-title" th:text="${post.title}"></h3>
+            <p class="card-right" th:text="'작성자 : ' + ${post.author}"></p>
+            <p class="card-right" th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></p>
+            <p class="card-content" th:text="${post.content}"></p>
+        </div>
+    </div>
+</body>
+</html>

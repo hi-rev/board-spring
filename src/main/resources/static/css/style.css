@@ -46,3 +46,27 @@ td {
     height: 50px;
 }
 
+.container {
+
+}
+
+.card {
+    border: 1px solid lightsteelblue;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-right {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.card-content {
+    margin-left: 20px;
+}
+

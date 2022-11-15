@@ -42,4 +42,20 @@ public class BoardService {
         }
         return boardDtoList;
     }
+
+    // 3. 게시글을 클릭하면 게시물의 내용 출력
+    @Transactional
+    public BoardDto getPost(Long id) {
+        Board board = boardRepository.findById(id).get();
+
+        BoardDto boardDto = BoardDto.builder()
+                .id(board.getId())
+                .author(board.getAuthor())
+                .title(board.getTitle())
+                .content(board.getContent())
+                .createdDate(board.getCreatedDate())
+                .build();
+
+        return boardDto;
+    }
 }
