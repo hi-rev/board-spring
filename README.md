@@ -8,5 +8,5 @@
 - [X] 글 작성 (CREATE)
 - [X] 글 목록 출력 (READ)
 - [X] 글 조회 (READ)
-- [ ] 글 수정 (UPDATE)
+- [X] 글 수정 (UPDATE)
 - [ ] 글 삭제 (DELETE)
