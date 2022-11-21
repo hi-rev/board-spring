@@ -11,11 +11,15 @@
         <h1>My Blog</h1>
     </div>
     <div class="container">
-        <div class="card">
+        <div class="card"> <!--카드 안-->
             <h3 class="card-title" th:text="${post.title}"></h3>
             <p class="card-right" th:text="'작성자 : ' + ${post.author}"></p>
             <p class="card-right" th:text="${#temporals.format(post.createdDate, 'yyyy-MM-dd HH:mm')}"></p>
             <p class="card-content" th:text="${post.content}"></p>
+
+            <div class="update"> <!--수정 버튼-->
+                <input type="button" value="수정" th:onclick="|location.href='@{/post/edit/}' + ${post.id}|"/>
+            </div>
         </div>
     </div>
 </body>
